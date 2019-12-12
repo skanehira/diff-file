@@ -45,3 +45,21 @@ func parse2Commit(output []string) []Commit {
 
 	return commits
 }
+
+func DiffContents(hash, file string) (string, error) {
+	args := []string{
+		"show",
+		"--no-renames",
+		"--color",
+		hash,
+		file,
+	}
+
+	output, err := exec.Command("git", args...).Output()
+
+	if err != nil {
+		return "", err
+	}
+
+	return string(output), nil
+}

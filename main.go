@@ -13,7 +13,8 @@ func main() {
 		return
 	}
 
-	if err := gui.New().Run(args[1]); err != nil {
+	file := args[1]
+	if err := gui.New(file).Run(); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
