@@ -15,6 +15,7 @@ func NewCommitPanel() *CommitPanel {
 	}
 
 	p.SetBorder(true).SetTitle("commits").SetTitleAlign(tview.AlignLeft)
+	p.SetFixed(1, 0).SetOffset(1, 1).SetSelectable(true, false)
 	return p
 }
 
