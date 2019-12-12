@@ -39,8 +39,8 @@ func (c *CommitPanel) UpdateView(commits []Commit) {
 	}
 
 	for i, co := range commits {
-		table.SetCell(i+1, 0, tview.NewTableCell(co.Hash))
-		table.SetCell(i+1, 1, tview.NewTableCell(co.Author))
+		table.SetCell(i+1, 0, tview.NewTableCell(fmt.Sprintf("[red::]%s", co.Hash)))
+		table.SetCell(i+1, 1, tview.NewTableCell(fmt.Sprintf("[green::]%s", co.Author)))
 		table.SetCell(i+1, 2, tview.NewTableCell(co.Message))
 	}
 }

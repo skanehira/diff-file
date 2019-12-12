@@ -1,7 +1,6 @@
 package gui
 
 import (
-	"fmt"
 	"os/exec"
 	"strings"
 )
@@ -38,8 +37,8 @@ func parse2Commit(output []string) []Commit {
 			break
 		}
 		commits = append(commits, Commit{
-			Hash:    fmt.Sprintf("[red::]%s", l[0]),
-			Author:  fmt.Sprintf("[green::]%s", l[1]),
+			Hash:    l[0],
+			Author:  l[1],
 			Message: l[2],
 		})
 	}
